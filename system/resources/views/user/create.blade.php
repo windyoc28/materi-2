@@ -10,7 +10,7 @@
 					Tambah Data User
 				</div>	
 				<div class="card-body">
-					<form action="{{url ('user')}}" method="post">
+					<form action="{{url ('admin/user')}}" method="post">
 						@csrf
 						<div class="form-group">
 							<label for="" class="control-label">Nama</label>
@@ -20,19 +20,14 @@
 							<label for="" class="control-label">Email</label>
 							<input type="email" class="form-control" name="email">							
 						</div>
-						
-
 						<div class="form-group">
 							<label for="" class="control-label">Username</label>
-							<input type="text" class="form-control" name="username">							
+							<input type="text" class="form-control" name="username">					
 						</div>
-						
-
 						<div class="form-group">
 							<label for="" class="control-label">Password</label>
-							<input type="password" class="form-control" name="password">							
+							<input type="password" class="form-control" name="password">		
 						</div>
-						
 						<button class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
 					</form>						
 				</div>

@@ -28,9 +28,9 @@
 								<td>{{$user->email}}</td>
 								<td>
 									<div class="btn-group">
-										<a href="{{url ('user', $user->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
-										<a href="{{url ('user', $user->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-										@include('template.utils.delete', ['url' => url('user', $user->id)])
+										<a href="{{url ('admin/user', $user->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>
+										<a href="{{url ('admin/user', $user->id)}}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+										@include('template.utils.delete', ['url' => url('admin/user', $user->id)])
 									</div>
 
 								</td>

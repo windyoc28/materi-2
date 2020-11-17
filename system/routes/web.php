@@ -30,21 +30,10 @@ Route::get('beranda', [homeController::class, 'showBeranda']);
 Route::get('kategori', [homeController::class, 'showKategori']);
 Route::get('registrasi', [homeController::class, 'showRegistrasi']);
 
-Route::get('produk', [produkController::class, 'index']);
-Route::get('produk/create', [produkController::class, 'create']);
-Route::post('produk', [produkController::class, 'store']);
-Route::get('produk/{produk}', [produkController::class, 'show']);
-Route::get('produk/{produk}/edit', [produkController::class, 'edit']);
-Route::put('produk/{produk}', [produkController::class, 'update']);
-Route::delete('produk/{produk}', [produkController::class, 'destroy']);
-
-Route::get('user', [userController::class, 'index']);
-Route::get('user/create', [userController::class, 'create']);
-Route::post('user', [userController::class, 'store']);
-Route::get('user/{user}', [userController::class, 'show']);
-Route::get('user/{user}/edit', [userController::class, 'edit']);
-Route::put('user/{user}', [userController::class, 'update']);
-Route::delete('user/{user}', [userController::class, 'destroy']);
+Route::prefix('admin')->group(function(){
+Route::resource('produk', produkController::class);
+Route::resource('user', userController::class);
+});
 
 Route::get('login', [authController::class, 'showLogin']);
 Route::post('login', [authController::class, 'loginProcess']);

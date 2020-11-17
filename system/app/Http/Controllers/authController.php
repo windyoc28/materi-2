@@ -18,4 +18,9 @@ use Auth;
 			}
 
 		}
+
+		function logout(){
+			Auth::logout();
+			return redirect('beranda');
+		}
 	}

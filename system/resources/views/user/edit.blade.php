@@ -10,7 +10,7 @@
 					Edit Data User
 				</div>	
 				<div class="card-body">
-					<form action="{{url ('user', $user->id)}}" method="post">
+					<form action="{{url ('admin/user', $user->id)}}" method="post">
 						@csrf
 						@method("PUT")
 					<div class="form-group">
