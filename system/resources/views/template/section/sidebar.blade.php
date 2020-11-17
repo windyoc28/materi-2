@@ -67,10 +67,10 @@ function checkRouteActive($route){
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{url ('user')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Promo
+                User
               </p>
             </a>
           </li>

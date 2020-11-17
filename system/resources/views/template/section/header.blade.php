@@ -31,7 +31,11 @@
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          WINDY
+          @if(Auth::check())
+          {{request()->user()->nama}}
+          @else
+          Silahkan Login
+          @endif
           <i class="far fa-user"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -44,7 +48,7 @@
             <i class="fas fa-cog mr-2"></i> Setting
           </a>
           <div class="dropdown-divider"></div>
-          <a href="{{url ('login')}}" class="dropdown-item">
+          <a href="{{url ('logout')}}" class="dropdown-item">
             <i class="fas fa-sign-out mr-2"></i> Logout
           </a>
           <div class="dropdown-divider"></div>
