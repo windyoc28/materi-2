@@ -30,7 +30,10 @@ Route::get('beranda', [homeController::class, 'showBeranda']);
 Route::get('kategori', [homeController::class, 'showKategori']);
 Route::get('registrasi', [homeController::class, 'showRegistrasi']);
 
-Route::prefix('admin')->group(function(){
+Route::get('test/{produk}/{hargamin?}/{hargamax?}', [homeController::class, 'test']);
+
+Route::prefix('admin')->middleware('auth')->group(function(){
+Route::post('produk/filter', [produkController::class, 'filter']);
 Route::resource('produk', produkController::class);
 Route::resource('user', userController::class);
 });
