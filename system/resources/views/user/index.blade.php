@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-header">
 					Data User
-					<a href="{{url ('user/create')}}" class="btn btn-dark float-right"> <i class="fa fa-plus"></i>Tambah</a>
+					<a href="{{url ('admin/user/create')}}" class="btn btn-dark float-right"> <i class="fa fa-plus"></i>Tambah</a>
 				</div>
 				<div class="card-body">
 					<table class="table">
