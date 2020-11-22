@@ -17,6 +17,7 @@
 							<th>Username</th>
 							<th>Nama</th>
 							<th>Email</th>
+							<th>Produk</th>
 							<th>Aksi</th>
 						</thead>
 						<tbody>
@@ -26,6 +27,7 @@
 								<td>{{$user->username}}</td>
 								<td>{{$user->nama}}</td>
 								<td>{{$user->email}}</td>
+								<td>{{$user->produk_count}}</td>
 								<td>
 									<div class="btn-group">
 										<a href="{{url ('admin/user', $user->id)}}" class="btn btn-dark"><i class="fa fa-info"></i></a>

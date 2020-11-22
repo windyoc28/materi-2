@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\produk;
+use Faker;
 
 	class produkController extends Controller{
 
 		function index(){
-			$data['list_produk'] = produk::all();
+			$user = request()->user();
+			$data['list_produk'] = $user->produk;
 			return view('produk.index', $data);
 
 		}
@@ -16,6 +18,7 @@ use App\Models\produk;
 		}
 		function store(){
 			$produk = new produk;
+			$produk->id_user = request()->user()->id;
 			$produk->nama = request('nama');
 			$produk->harga = request('harga');
 			$produk->stok = request('stok');

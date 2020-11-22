@@ -7,7 +7,7 @@ use App\Models\userdetail;
 	class userController extends Controller{
 
 		function index(){
-			$data['list_user'] = user::all();
+			$data['list_user'] = user::withCount('produk')->get();
 			return view('user.index', $data);
 
 		}

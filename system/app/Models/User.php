@@ -16,5 +16,9 @@ class User extends Authenticatable
     function detail(){
     	return $this->hasOne(userdetail::class, 'id_user');
     }
+
+    function produk(){
+    	return $this->hasMany(produk::class, 'id_user');
+    }
 }
 
