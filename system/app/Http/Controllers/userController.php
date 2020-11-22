@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\user;
+use App\Models\userdetail;
 
 	class userController extends Controller{
 
@@ -20,9 +21,16 @@ use App\Models\user;
 			$user->email = request('email');
 			$user->username = request('username');
 			$user->password = bcrypt(request('password'));
+			
 			$user->save();
 
-			return redirect('user')->with('success', 'Data Berhasil Ditambahkan');
+			$userdetail = new userdetail;
+			$userdetail->id_user = $user->id;
+			$userdetail->no_hp = request('no_hp');
+			$userdetail->save();
+
+			return redirect('admin/user')->with('success', 'Data Berhasil Ditambahkan');
+
 		
 		}
 		function show(user $user){
@@ -39,15 +47,16 @@ use App\Models\user;
 			$user->email = request('email');
 			$user->username = request('username');
 			if(request('password')) $user->password = bcrypt(request('password'));
+			
 			$user->save();
 
-			return redirect('user')->with('success', 'Data Berhasil Diedit');;
+			return redirect('admin/user')->with('success', 'Data Berhasil Diedit');;
 		
 		}
 		function destroy(user $user){
 			$user->delete();
 
-			return redirect('user')->with('success', 'Data Berhasil Dihapus');;
+			return redirect('admin/user')->with('success', 'Data Berhasil Dihapus');;
 		
 		}
 	}

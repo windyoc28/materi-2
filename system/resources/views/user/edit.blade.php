@@ -29,6 +29,10 @@
 							<label for="" class="control-label">Password</label>
 							<input type="password" class="form-control" name="password" value="{{$user->password}}">		
 						</div>
+						<div class="form-group">
+							<label for="" class="control-label">No Handphone</label>
+							<input type="text" class="form-control" name="no_hp" value="{{$user->no_hp}}">					
+						</div>
 						<button class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
 						</form>						
 					</div>
