@@ -2,6 +2,6 @@
 
 namespace App\Models;
 
-class userdetail extends model{
+class userdetail extends Model{
 	protected $table = 'user_detail';
 }
